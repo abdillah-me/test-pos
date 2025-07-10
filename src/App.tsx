@@ -17,7 +17,7 @@ const App = () => {
     // lakukan pengecekan jika nama barang sama, maka akan menambahkan item, jika input yg dimasukkan berbeda, akan menampilkan error
     const handleSameProduct = () => {
         const sameProductName = cart.find(
-            (item) => item.name.toLowerCase() === name.toLocaleLowerCase()
+            (item) => item.name.toLowerCase() === name.toLowerCase()
         );
         const samePrice = cart.find((item) => item.harga === harga);
 
