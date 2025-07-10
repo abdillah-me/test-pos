@@ -136,11 +136,17 @@ const App = () => {
                         className="border border-black rounded-md px-2 py-2"
                     />
                     <button
-                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                        className={`${
+                            name === "" || harga === 0 || jumlah === 0
+                                ? "bg-gray-300 cursor-not-allowed"
+                                : "bg-blue-500 hover:bg-blue-600"
+                        } text-white font-bold py-2 px-4 rounded transition`}
                         onClick={handleCart}
+                        disabled={name === "" || harga === 0 || jumlah === 0}
                     >
                         Add to Cart
                     </button>
+
                     {/* table cart */}
                 </div>
                 <div className="w-[50%]">
@@ -177,7 +183,7 @@ const App = () => {
                             )}
                             {cart.map((item, index) => (
                                 <tr key={index} className="border-b">
-                                    <td className="px-4 py-2 text-sm text-gray-800">
+                                    <td className="px-4 py-2 text-sm text-gray-800 capitalize">
                                         {item.name}
                                     </td>
                                     <td className="px-4 py-2 text-sm text-gray-800">
