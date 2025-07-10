@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const App = () => {
     // dibuat 2 input 1 harga 1 jumlah ada tombol harga * jumlah
     const [name, setName] = useState<string>("");
-    const [harga, setHarga] = useState<number>(5000);
+    const [harga, setHarga] = useState<number>(0);
     const [jumlah, setJumlah] = useState<number>(0);
 
     const [cart, setCart] = useState<any[]>([]);
@@ -123,8 +123,10 @@ const App = () => {
                             value={harga}
                             onChange={(e) => setHarga(Number(e.target.value))}
                             className="pl-10 pr-2 py-2 border border-black rounded-md w-full"
+                            placeholder="harga kelipatan 5000"
                         />
                     </div>
+                    <span className="-mt-3 text-[10px] text-red-600">*harga kelipatan 5.000</span>
 
                     <label className="font-semibold" htmlFor="">
                         Jumlah
