@@ -90,7 +90,7 @@ const App = () => {
     };
 
     function formatRupiah(value: number): string {
-        return `Rp. ${value.toLocaleString("id-ID")}`;
+        return `Rp. ${value?.toLocaleString("id-ID")}`;
     }
 
     return (
@@ -126,7 +126,9 @@ const App = () => {
                             placeholder="harga kelipatan 5000"
                         />
                     </div>
-                    <span className="-mt-3 text-[10px] text-red-600">*harga kelipatan 5.000</span>
+                    <span className="-mt-3 text-[10px] text-red-600">
+                        *harga kelipatan 5.000
+                    </span>
 
                     <label className="font-semibold" htmlFor="">
                         Jumlah
